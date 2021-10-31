@@ -1,3 +1,4 @@
+from mtoken import token
 import discord
 from discord.ext import commands
 import youtube_dl
@@ -59,4 +60,4 @@ async def leave(ctx):
         await ctx.send("Bot not in voice channel")
 
 
-client.run("ODkxMzU0NTk0NTM2NDgwNzc4.YU9Ipw.E9zxebd2oBDCv-zOa7oLXP06ZeE")
+client.run(token)
