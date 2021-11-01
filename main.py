@@ -64,7 +64,7 @@ async def next(ctx):
 @client.command()
 async def watch(ctx):
     data = {
-        'max_age':60,
+        'max_age':6000,
         'max_uses':0,
         'target_application_id':755600276941176913,
         'target_type':2,
