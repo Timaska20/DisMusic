@@ -1,4 +1,4 @@
-import mtkoen
+import mtoken
 import discord
 from discord.ext import commands
 import youtube_dl
@@ -50,7 +50,7 @@ async def p(ctx, url : str, is_loop=False):
         except AttributeError:
             break
 
-
+@client.command()
 async def next(ctx):
     if ctx.voice_client.is_playing():
         if len(Music_list[ctx.guild.id])>0:
@@ -66,4 +66,4 @@ async def leave(ctx):
         await ctx.send("Bot not in voice channel")
 
 
-client.run(mtoken.dev_token)
+client.run(mtoken.token)
