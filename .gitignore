@@ -1,0 +1,10 @@
+bin
+etc
+.idea
+__pycache__
+lib
+lib64
+pyvenv.cfg
+share
+
+
