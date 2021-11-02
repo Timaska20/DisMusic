@@ -63,25 +63,28 @@ async def next(ctx):
 
 @client.command()
 async def watch(ctx):
-    data = {
-        'max_age':6000,
-        'max_uses':0,
-        'target_application_id':755600276941176913,
-        'target_type':2,
-        'temporary':False,
-        'validate':None
-    }
-    headers = {
-        'Authorization':"Bot OTAzMTMwMDM5MTMzMDE2MDk1.YXofZA.9jf6lfVKrmFCv_DfFuyOxpDwV_s",
-        'Content-type':"application/json"
-    }
     if ctx.author.voice is not None:
         if ctx.author.voice.channel is not None:
             channel = ctx.author.voice.channel
-
-    response = requests.post(f"https://discord.com/api/v8/channels/{channel.id}/invites", data=json.dumps(data),headers=headers)
-    link = json.loads(response.content)
-    print(link)
+            data = {
+                'max_age': 86400,
+                'max_uses': 0,
+                'target_application_id': 755600276941176913,
+                'target_type': 2,
+                'guild': f'{ctx.guild}',
+                'channel': f'{channel}',
+                'temporary': False,
+                'validate': None
+            }
+            headers = {
+                'Authorization': "Bot OTAzMTMwMDM5MTMzMDE2MDk1.YXofZA.9jf6lfVKrmFCv_DfFuyOxpDwV_s",
+                'Content-type': "application/json"
+            }
+            response = requests.post(f"https://discord.com/api/v8/channels/{channel.id}/invites", data=json.dumps(data),headers=headers)
+            link = json.loads(response.content)
+            print(link)
+    else:
+        await ctx.send("Please connect to voice chanel")
     await ctx.send(f"https://discord.com/invite/{link['code']}")
 
 
