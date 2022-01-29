@@ -1,2 +1,0 @@
-token='ODkxMzU0NTk0NTM2NDgwNzc4.YU9Ipw.E9zxebd2oBDCv-zOa7oLXP06ZeE'
-dev_token ='OTAzMTMwMDM5MTMzMDE2MDk1.YXofZA.9jf6lfVKrmFCv_DfFuyOxpDwV_s'
